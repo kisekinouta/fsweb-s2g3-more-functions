@@ -16,10 +16,13 @@
   örnek output: ""
 */
 
-function dosyaAdiniBul(/* kodlar buraya */) {
-  // kodlar buraya
-}
+function dosyaAdiniBul(findPath) {
+  const output = findPath === "" ? "" : findPath.split("/");
+  const folderName = output.pop();
+  return folderName
 
+}
+console.log(dosyaAdiniBul(" "));
 /*
   GÖREV 2
   - Input:  Bir sayı arrayini parametre olarak alacak bir fonksiyon oluştur.
@@ -38,9 +41,15 @@ function dosyaAdiniBul(/* kodlar buraya */) {
   örnek output: 104
 */
 
-function ortalamaBul(/* kodlar buraya */) {
-  // kodlar buraya
-}
+function ortalamaBul(numbers) {
+  const output = numbers.length === 0 ? null : Math.round(numbers.reduce((x, y) => {return x + y}, 0) / numbers.length);
+  return output;
+  }
+  console.log(ortalamaBul([]));
+  console.log(ortalamaBul([4]));
+  console.log(ortalamaBul([50, -26, 153, 7]));
+  console.log(ortalamaBul([109, 216, 288, 143, 71, 185, -278, 194, 5]));
+
 
 /*
   GÖREV 3
@@ -62,9 +71,14 @@ function ortalamaBul(/* kodlar buraya */) {
   örnek output: [109, 216, 288, 143, 185, 194]
 */
 
-function ortalamadanBuyukleriBul(/* kodlar buraya */) {
-  // kodlar buraya
+function ortalamadanBuyukleriBul(numberArray, findAverage) {
+  const outcome = numberArray.length === 0 ? null : numberArray.filter(x => x >= findAverage(numberArray));
+  return outcome;
 }
+console.log(ortalamadanBuyukleriBul([], ortalamaBul));
+console.log(ortalamadanBuyukleriBul([4], ortalamaBul));
+console.log(ortalamadanBuyukleriBul([50, -26, 153, 7], ortalamaBul));
+console.log(ortalamadanBuyukleriBul([109, 216, 288, 143, 71, 185, -278, 194, 5], ortalamaBul));
 
 /* !!!! Burdan aşağısını değiştirmeyin !!!! */
 function as() {
